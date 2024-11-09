@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Parcial_Web/style.css">
+    <title>Calculadora de Compras</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Compra de Productos</h1>
+
+        <div class="search-bar">
+            <label for="buscarProducto">Buscar producto:</label>
+            <input type="text" id="buscarProducto" placeholder="Escribe el nombre del producto...">
+        </div>
+
+        <div class="productos-grid">
+            <div class="producto-card" data-producto="arroz">
+                <img src="/Parcial_Web/img/arroz.jpg" alt="Arroz">
+                <h3>Arroz</h3>
+                <p>$1,000</p>
+                <label for="cantidad_arroz">Cantidad:</label>
+                <input type="number" id="cantidad_arroz" value="1" min="1">
+                <button
+                    onclick="agregarAlCarrito('arroz', 1000, document.getElementById('cantidad_arroz').value)">Agregar
+                    al carrito</button>
+            </div>
+            <div class="producto-card" data-producto="frijol">
+                <img src="/Parcial_Web/img/frijol.jpeg" alt="Frijol">
+                <h3>Frijol</h3>
+                <p>$1,500</p>
+                <label for="cantidad_frijol">Cantidad:</label>
+                <input type="number" id="cantidad_frijol" value="1" min="1">
+                <button
+                    onclick="agregarAlCarrito('frijol', 1500, document.getElementById('cantidad_frijol').value)">Agregar
+                    al carrito</button>
+            </div>
+            <div class="producto-card" data-producto="lenteja">
+                <img src="/Parcial_Web/img/lenteja.jpg" alt="Lenteja">
+                <h3>Lenteja</h3>
+                <p>$1,200</p>
+                <label for="cantidad_lenteja">Cantidad:</label>
+                <input type="number" id="cantidad_lenteja" value="1" min="1">
+                <button
+                    onclick="agregarAlCarrito('lenteja', 1200, document.getElementById('cantidad_lenteja').value)">Agregar
+                    al carrito</button>
+            </div>
+            <div class="producto-card" data-producto="pasta">
+                <img src="/Parcial_Web/img/pasta.jpg" alt="Pasta">
+                <h3>Pasta</h3>
+                <p>$900</p>
+                <label for="cantidad_pasta">Cantidad:</label>
+                <input type="number" id="cantidad_pasta" value="1" min="1">
+                <button
+                    onclick="agregarAlCarrito('pasta', 900, document.getElementById('cantidad_pasta').value)">Agregar al
+                    carrito</button>
+            </div>
+            <div class="producto-card" data-producto="aceite">
+                <img src="/Parcial_Web/img/aceite.jpeg" alt="Aceite">
+                <h3>Aceite</h3>
+                <p>$2,500</p>
+                <label for="cantidad_aceite">Cantidad:</label>
+                <input type="number" id="cantidad_aceite" value="1" min="1">
+                <button
+                    onclick="agregarAlCarrito('aceite', 2500, document.getElementById('cantidad_aceite').value)">Agregar
+                    al carrito</button>
+            </div>
+            <div class="producto-card" data-producto="azucar">
+                <img src="/Parcial_Web/img/azucar.jpg" alt="Azúcar">
+                <h3>Azúcar</h3>
+                <p>$1,800</p>
+                <label for="cantidad_azucar">Cantidad:</label>
+                <input type="number" id="cantidad_azucar" value="1" min="1">
+                <button
+                    onclick="agregarAlCarrito('azucar', 1800, document.getElementById('cantidad_azucar').value)">Agregar
+                    al carrito</button>
+            </div>
+            <div class="producto-card" data-producto="sal">
+                <img src="/Parcial_Web/img/sal.jpg" alt="Sal">
+                <h3>Sal</h3>
+                <p>$800</p>
+                <label for="cantidad_sal">Cantidad:</label>
+                <input type="number" id="cantidad_sal" value="1" min="1">
+                <button onclick="agregarAlCarrito('sal', 800, document.getElementById('cantidad_sal').value)">Agregar al
+                    carrito</button>
+            </div>
+            <div class="producto-card" data-producto="cafe">
+                <img src="/Parcial_Web/img/cafe.jpg" alt="Café">
+                <h3>Café</h3>
+                <p>$3,500</p>
+                <label for="cantidad_cafe">Cantidad:</label>
+                <input type="number" id="cantidad_cafe" value="1" min="1">
+                <button onclick="agregarAlCarrito('cafe', 3500, document.getElementById('cantidad_cafe').value)">Agregar
+                    al carrito</button>
+            </div>
+            <div class="producto-card" data-producto="chocolate">
+                <img src="/Parcial_Web/img/chocolate.jpeg" alt="Chocolate">
+                <h3>Chocolate</h3>
+                <p>$2,000</p>
+                <label for="cantidad_chocolate">Cantidad:</label>
+                <input type="number" id="cantidad_chocolate" value="1" min="1">
+                <button
+                    onclick="agregarAlCarrito('chocolate', 2000, document.getElementById('cantidad_chocolate').value)">Agregar
+                    al carrito</button>
+            </div>
+            <div class="producto-card" data-producto="arveja">
+                <img src="/Parcial_Web/img/arveja.jpeg" alt="Arveja">
+                <h3>Arveja</h3>
+                <p>$1,300</p>
+                <label for="cantidad_arveja">Cantidad:</label>
+                <input type="number" id="cantidad_arveja" value="1" min="1">
+                <button
+                    onclick="agregarAlCarrito('arveja', 1300, document.getElementById('cantidad_arveja').value)">Agregar
+                    al carrito</button>
+            </div>
+        </div>
+
+        <div class="carrito">
+            <h2>Productos en el carrito:</h2>
+            <ul id="listaCarrito">
+            </ul>
+            <div class="total-carrito">
+                <h3>Total: <span id="totalCompra">$0</span></h3>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="comprar">Comprar</button>
+            <button id="limpiar">Limpiar</button>
+            <button id="borrar">Borrar</button>
+        </div>
+
+        <div id="valor" class="valor">
+            <p>Valor: <span id="valorTotal">$0</span></p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCompras"></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><strong>Total:</strong></td>
+                    <td id="sumaTotal">$0</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+    <script>
+        document.getElementById('buscarProducto').addEventListener('input', function () {
+            let searchQuery = this.value.toLowerCase();
+            let productos = document.querySelectorAll('.producto-card');
+            productos.forEach(function (producto) {
+                let nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
+                if (nombreProducto.includes(searchQuery)) {
+                    producto.style.display = 'block'; 
+                } else {
+                    producto.style.display = 'none'; 
+                }
+            });
+        });
+
+     
+    </script>
+
+<script src="/Parcial_Web/main.js"></script>
+</body>
+
+</html>
